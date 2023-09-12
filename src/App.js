@@ -25,7 +25,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<SignUp />}></Route>
           <Route exact path="/signin" element={<SignIn />}></Route>
-          <Route
+          {/* <Route
             exact
             path="/header"
             element={
@@ -33,9 +33,9 @@ function App() {
                 dialogOpen={(val) => {
                   dialogOpen(val);
                 }}
-              />
-            }
-          ></Route>
+              /> */}
+          {/* }
+          ></Route> */}
           <Route exact path="/main" element={<Main open={false} />}></Route>
         </Routes>
       </Mains>

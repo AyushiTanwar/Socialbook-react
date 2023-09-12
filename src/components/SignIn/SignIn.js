@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function SignIn() {
   const [signin, setsignin] = useState({
@@ -7,6 +7,7 @@ export default function SignIn() {
     password: "",
   });
   const [errors, seterrors] = useState({});
+  const navigate=useNavigate();
 
   const validate = () => {
     let obj = {};
@@ -62,7 +63,7 @@ export default function SignIn() {
             </div>
           </div>
           <div style={{ marginTop: "1rem" }}>
-            <Link to="/header">
+            {/* <Link to="/header"> */}
               <button
                 type="submit"
                 style={{
@@ -74,12 +75,14 @@ export default function SignIn() {
                   color: "white",
                 }}
                 onClick={() => {
-                  validate();
+                  if(validate()){
+                    navigate("/main")
+                  }
                 }}
               >
                 SignIn
               </button>
-            </Link>
+            {/* </Link> */}
           </div>
           <div>
             <a href="forgot">Forgotten Password</a>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 // import { useHistory } from "react-router-dom";
 
@@ -10,6 +10,10 @@ export default function SignUp() {
     confirmPassword: "",
   });
   const [errors, setErrors] = useState({});
+  // useEffect(() => {
+  //   signupApi();
+  // }, []);
+
   const validate = () => {
     let obj = {};
     let error = false;
@@ -31,6 +35,29 @@ export default function SignUp() {
     setErrors(obj);
     return !error;
   };
+//this is how we use get api using fetch
+  // function signupApi() {
+  //   fetch("http://localhost:8000/profile")
+  //     .then((res) => {
+  //       return res.json();
+  //     })
+  //     .then((res) => {
+  //       console.log(res);
+  //     });
+  // }
+
+
+  //fetch post api
+  // function signupApi() {
+  //   fetch("http://localhost:8000/profile", {
+  //     method: "POST",
+  //     body: JSON.stringify(signup),
+  //     headers: { "Content-type": "application/json" },
+  //   });
+  // }
+
+  
+
   return (
     <>
       <div
@@ -104,6 +131,7 @@ export default function SignUp() {
               }}
               onClick={() => {
                 if (validate()) {
+                  signupApi();
                   navigate("/signin");
                 }
               }}

@@ -10,6 +10,7 @@ import Main from "../Main/Main";
 import { Link } from "react-router-dom";
 
 export default function Header({ dialogOpen }) {
+  const [open,setOpen]=useState(false)
   return (
     <div>
       <div style={{ height: "4rem", backgroundColor: "black" }}>
@@ -47,10 +48,10 @@ export default function Header({ dialogOpen }) {
         />
         <FaPlus
           style={{ color: "white", marginLeft: "29rem", fontSize: "1.6rem" }}
-          // onClick={() => setOpen(!open)}
-          onClick={() => {
-            dialogOpen(true);
-          }}
+          onClick={() => setOpen(!open)}
+          // onClick={() => {
+          //   dialogOpen(true);
+          // }}
         />
         <FaFacebookMessenger
           style={{ color: "white", marginLeft: "2rem", fontSize: "1.6rem" }}
@@ -91,7 +92,7 @@ export default function Header({ dialogOpen }) {
           </button>
         </Link>
       </div>
-      {/* <div>
+      <div>
               {open?<div style={{border:"5px solid black",paddingBottom:"1rem",width:"25rem",marginLeft:"35rem"}}>
       <div style={{display:"flex",justifyContent:"center",paddingTop:"2rem",}}>
     <textarea></textarea>
@@ -102,8 +103,7 @@ export default function Header({ dialogOpen }) {
     </div>:null}
       
    
-         </div> */}
-      <Main />
+         </div>
     </div>
   );
 }

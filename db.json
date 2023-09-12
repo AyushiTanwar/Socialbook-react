@@ -13,7 +13,12 @@
       "postId": 1
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "profile": [
+    {
+      "email": "ayushi@cqs.in",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 1
+    }
+  ]
 }

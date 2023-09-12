@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Header from "../Header/Header";
 
 export default function Main(props) {
   useEffect(() => {
@@ -7,6 +8,7 @@ export default function Main(props) {
 
   return (
     <>
+      <Header />
       {props.open ? (
         <div>
           <div
